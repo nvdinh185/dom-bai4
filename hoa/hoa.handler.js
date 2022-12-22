@@ -9,11 +9,11 @@ module.exports = {
 };
 
 async function getListHoa() {
-    const listhoa = await new Promise((resolve, reject) => {
+    const listHoa = await new Promise((resolve, reject) => {
         db.all(`SELECT * FROM listhoa`, (err, row) => {
             if (err) reject(err);
             resolve(row);
         })
     })
-    return listhoa;
+    return listHoa;
 }

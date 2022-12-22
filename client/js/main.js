@@ -5,7 +5,7 @@ headingElement.innerText = 'Sản phẩm nổi bật';
 const ulElement = document.querySelector("#list");
 
 (async () => {
-    let listHoa = await axiosClient.get('/hoa/listhoa');
+    let listHoa = await axios.get('/hoa/listhoa');
     listHoa = listHoa.data;
     // console.log("listHoa: ", listHoa);
     listHoa.forEach(function (hoa) {

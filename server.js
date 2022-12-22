@@ -6,7 +6,7 @@ const errorHandler = require('./_helpers/error-handler');
 
 app.use(cors());
 
-const publicPath = path.join(__dirname, '.', 'client');
+const publicPath = path.join(__dirname, 'client');
 app.use(express.static(publicPath));
 
 // api routes
