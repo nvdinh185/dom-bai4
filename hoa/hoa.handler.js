@@ -7,7 +7,7 @@ module.exports = {
 
 async function getListHoa(req, res, next) {
     try {
-        const db = new sqlite3.Database(dbFile);
+        var db = new sqlite3.Database(dbFile);
         db.serialize();
         const listHoa = await new Promise((resolve, reject) => {
             db.all(`SELECT * FROM listhoa`, (err, row) => {
