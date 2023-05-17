@@ -6,7 +6,7 @@ const ulElement = document.querySelector("#list");
 
 (async () => {
     try {
-        var listHoa = await axios.get('http://localhost:3000/hoa/listhoa');
+        var listHoa = await axios.get('http://localhost:3000/hoa');
         listHoa = listHoa.data;
         // console.log("listHoa: ", listHoa);
         listHoa.forEach(function (hoa) {
