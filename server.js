@@ -1,10 +1,7 @@
 ﻿const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
 const errorHandler = require('./_helpers/error-handler');
-
-app.use(cors());
 
 const publicPath = path.join(__dirname, 'client');
 app.use(express.static(publicPath));
