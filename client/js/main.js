@@ -13,16 +13,16 @@ const ulElement = document.querySelector("#list");
             const liElement = document.createElement('li');
 
             liElement.innerHTML = `
-            <div class="left">
-                <a href="#" title=""><img src=${hoa.image} alt=${hoa.image} /></a>
-            </div>
-            <div class="right">
-                <h2><a href="#" title="">${hoa.title}</a></h2>
-                <p>${hoa.description}</p>
-                <span><a href="#" title="">-Chi tiết-</a></span>
-            </div>
-            <div class="clr"></div>
-        `;
+                <div class="left">
+                    <a href="#" title=""><img src=${hoa.image} alt=${hoa.image} /></a>
+                </div>
+                <div class="right">
+                    <h2><a href="#" title="">${hoa.title}</a></h2>
+                    <p>${hoa.description}</p>
+                    <span><a href="#" title="">-Chi tiết-</a></span>
+                </div>
+                <div class="clr"></div>
+            `;
 
             ulElement.appendChild(liElement);
 
