@@ -40,11 +40,11 @@ var listHoa = [
     },
 ]
 
-var headingElement = document.querySelector("#heading");
+var headingElement = $("#heading");
 
-headingElement.innerText = 'Sản phẩm nổi bật';
+headingElement.text('Sản phẩm nổi bật');
 
-const ulElement = document.querySelector("#list");
+const ulElement = $("#list");
 
 var htmls = '';
 listHoa.forEach(function (hoa) {
@@ -63,4 +63,4 @@ listHoa.forEach(function (hoa) {
     `;
 })
 
-ulElement.innerHTML = htmls;
+ulElement.html(htmls);
