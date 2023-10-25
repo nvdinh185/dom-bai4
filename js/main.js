@@ -46,10 +46,8 @@ headingElement.text('Sản phẩm nổi bật');
 
 const ulElement = $("#list");
 
-var htmls = '';
-listHoa.forEach(function (hoa) {
-    htmls += `
-    <li>
+var htmls = listHoa.map(function (hoa) {
+    return `<li>
         <div class="left">
             <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
         </div>
@@ -59,8 +57,7 @@ listHoa.forEach(function (hoa) {
             <span><a href="#" title="">-Chi tiết-</a></span>
         </div>
         <div class="clr"></div>
-    </li>
-    `;
+    </li>`;
 })
 
-ulElement.html(htmls);
+ulElement.html(htmls.join(''));
