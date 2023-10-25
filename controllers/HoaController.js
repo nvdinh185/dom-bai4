@@ -1,15 +1,21 @@
-const sqlite3 = require('sqlite3').verbose();
-const dbFile = './database/listhoa.db';
+const mysql = require('mysql');
+
+const configDB = {
+    host: "localhost",
+    user: "root",
+    password: "123456",
+    database: "hoa"
+};
 
 class HoaController {
 
     // [GET] /hoa
     async index(req, res) {
         try {
-            var db = new sqlite3.Database(dbFile);
-            db.serialize();
+            var conn = mysql.createConnection(configDB);
+
             const listHoa = await new Promise((resolve, reject) => {
-                db.all(`SELECT * FROM hoa`, (err, row) => {
+                conn.query(`SELECT * FROM hoa`, (err, row) => {
                     if (err) reject(err);
                     resolve(row);
                 })
@@ -18,7 +24,7 @@ class HoaController {
         } catch (err) {
             res.status(500).send(err);
         } finally {
-            db.close();
+            conn.end();
         }
     }
 }

@@ -14,10 +14,10 @@ const ulElement = document.querySelector("#list");
 
             liElement.innerHTML = `
                 <div class="left">
-                    <a href="#" title=""><img src=${hoa.image} alt=${hoa.image} /></a>
+                    <a href="#" title=""><img src=images/${hoa.image} alt=${hoa.image} /></a>
                 </div>
                 <div class="right">
-                    <h2><a href="#" title="">${hoa.title}</a></h2>
+                    <h2><a href="#" title="">${hoa.name}</a></h2>
                     <p>${hoa.description}</p>
                     <span><a href="#" title="">-Chi tiết-</a></span>
                 </div>
