@@ -9,12 +9,10 @@ const ulElement = $("#list");
         var listHoa = await axios.get('http://localhost:3000/hoa');
         listHoa = listHoa.data;
         // console.log("listHoa: ", listHoa);
-        listHoa.forEach(function (hoa) {
-            const liElement = $('<li>');
-
-            liElement.html(`
+        var htmls = listHoa.map(function (hoa) {
+            return `<li>
                 <div class="left">
-                    <a href="#" title=""><img src=images/${hoa.image} alt=${hoa.image} /></a>
+                    <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
                 </div>
                 <div class="right">
                     <h2><a href="#" title="">${hoa.name}</a></h2>
@@ -22,11 +20,10 @@ const ulElement = $("#list");
                     <span><a href="#" title="">-Chi tiết-</a></span>
                 </div>
                 <div class="clr"></div>
-            `);
+            </li>`;
+        })
 
-            ulElement.append(liElement);
-
-        });
+        ulElement.html(htmls.join(''));
     } catch (err) {
         console.log('Lỗi ' + err);
         const liElement = $('<li>');
