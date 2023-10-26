@@ -46,8 +46,9 @@ headingElement.innerText = 'Sản phẩm nổi bật';
 
 const ulElement = document.querySelector("#list");
 
-var htmls = listHoa.map(function (hoa) {
-    return `<li>
+var htmls = '';
+listHoa.forEach(function (hoa) {
+    htmls += `<li>
         <div class="left">
             <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
         </div>
@@ -60,4 +61,4 @@ var htmls = listHoa.map(function (hoa) {
     </li>`;
 })
 
-ulElement.innerHTML = htmls.join('');
+ulElement.innerHTML = htmls;
