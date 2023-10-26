@@ -9,8 +9,9 @@ const ulElement = $("#list");
         var listHoa = await axios.get('http://localhost:3000/hoa');
         listHoa = listHoa.data;
         // console.log("listHoa: ", listHoa);
-        var htmls = listHoa.map(function (hoa) {
-            return `<li>
+        var htmls = '';
+        listHoa.forEach(function (hoa) {
+            htmls += `<li>
                 <div class="left">
                     <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
                 </div>
@@ -23,7 +24,7 @@ const ulElement = $("#list");
             </li>`;
         })
 
-        ulElement.html(htmls.join(''));
+        ulElement.html(htmls);
     } catch (err) {
         console.log('Lỗi ' + err);
         const liElement = $('<li>');
