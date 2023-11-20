@@ -48,17 +48,19 @@ const ulElement = document.querySelector("#list");
 
 var htmls = '';
 listHoa.forEach(function (hoa) {
-    htmls += `<li>
-        <div class="left">
-            <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
-        </div>
-        <div class="right">
-            <h2><a href="#" title="">${hoa.name}</a></h2>
-            <p>${hoa.description}</p>
-            <span><a href="#" title="">-Chi tiết-</a></span>
-        </div>
-        <div class="clr"></div>
-    </li>`;
+    htmls += `
+        <li>
+            <div class="left">
+                <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
+            </div>
+            <div class="right">
+                <h2><a href="#" title="">${hoa.name}</a></h2>
+                <p>${hoa.description}</p>
+                <span><a href="#" title="">-Chi tiết-</a></span>
+            </div>
+            <div class="clr"></div>
+        </li>
+    `;
 })
 
 ulElement.innerHTML = htmls;
