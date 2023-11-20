@@ -11,7 +11,8 @@ const ulElement = document.querySelector("#list");
         // console.log("listHoa: ", listHoa);
         var htmls = '';
         listHoa.forEach(function (hoa) {
-            htmls += `<li>
+            htmls += `
+            <li>
                 <div class="left">
                     <a href="#" title=""><img src="images/${hoa.image}" alt="${hoa.image}" /></a>
                 </div>
@@ -21,15 +22,17 @@ const ulElement = document.querySelector("#list");
                     <span><a href="#" title="">-Chi tiết-</a></span>
                 </div>
                 <div class="clr"></div>
-            </li>`;
+            </li>
+            `;
         })
 
+        console.log(htmls);
         ulElement.innerHTML = htmls;
     } catch (err) {
         console.log('Lỗi ' + err);
         const liElement = document.createElement('li');
         liElement.innerText = 'Xảy ra lỗi khi lấy dữ liệu!';
-        liElement.setAttribute('style', 'display: block; color: red; font-style: italic;');
+        liElement.setAttribute('style', 'color: red; font-style: italic;');
         ulElement.appendChild(liElement);
     }
 })()
