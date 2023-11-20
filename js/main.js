@@ -63,4 +63,5 @@ listHoa.forEach(function (hoa) {
     `;
 })
 
+console.log(htmls);
 ulElement.innerHTML = htmls;
